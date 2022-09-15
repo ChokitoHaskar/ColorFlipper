@@ -23,11 +23,26 @@ $(document).ready(function () {
 
 $("#changeColor").click(function () {
   let colorPicked = Math.floor(Math.random() * colors.length);
+  $("body").css("background-image", "none");
   $("body").css("background-color", "#" + colors[colorPicked]);
   $("#colorCode").text("#" + colors[colorPicked]);
 });
 
 $("#resetColor").click(function () {
+  $("body").css("background-image", "none");
   $("body").css("background-color", baseColor);
   $("#colorCode").text(baseColor);
+});
+
+$("#addGradient").click(function () {
+  let colorPicked = Math.floor(Math.random() * colors.length);
+  let colorPicked2 = Math.floor(Math.random() * colors.length);
+  $("body").css(
+    "background-image",
+    `linear-gradient(to right, ${"#" + colors[colorPicked]}, ${
+      "#" + colors[colorPicked2]
+    })`
+  );
+  $("body").css("background-color", baseColor);
+  $("#colorCode").text("#" + colors[colorPicked] + " #" + colors[colorPicked2]);
 });
