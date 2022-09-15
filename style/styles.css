@@ -68,10 +68,16 @@ body {
   border-radius: 0.25rem;
   font-weight: bold;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .btn:hover {
-  filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.5));
+  box-shadow: 0 4px 5px #000;
+}
+
+.btn:active {
+  box-shadow: 0 2px 5px #000;
+  transform: translateY(2px);
 }
 
 .primary {
